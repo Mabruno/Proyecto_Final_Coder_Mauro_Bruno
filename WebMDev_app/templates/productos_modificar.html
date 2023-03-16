@@ -1,0 +1,94 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block contenidoVar %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Productos Modificacion</title>
+
+    <style>
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+</head>
+<body>
+
+    <form class="col-md-9 m-auto" method="POST">
+    {{error}}
+    {% csrf_token %}
+    {{form.as_p}}
+    <div>
+        <label for="id_nombre">Nombre:</label>
+        <input type="text" id="id_nombre" name="nombre" value="{{ form.nombre.value }}">
+    </div>
+    <div>
+        <label for="id_descripcion">Descripción:</label>
+        <input type="text" id="id_descripcion" name="descripcion" value="{{ form.descripcion.value }}">
+    </div>
+    <div>
+        <label for="id_valoracion">Valoración:</label>
+        <input type="text" id="id_valoracion" name="valoracion" value="{{ form.valoracion.value }}">
+    </div>
+    <div>
+        <label for="id_precio">Precio:</label>
+        <input type="text" id="id_precio" name="precio" value="{{ form.precio.value }}">
+    </div>
+    <div>
+        <label for="id_tamaño">Tamaño:</label>
+        <input type="text" id="id_tamaño" name="tamaño" value="{{ form.tamaño.value }}">
+    </div>
+    <div>
+        <label for="id_idnumber">Número de identificación:</label>
+        <input type="text" id="id_idnumber" name="idnumber" value="{{ form.idnumber.value }}">
+    </div>
+    <div>
+        <label for="id_imagen">Imagen:</label>
+        <input type="text" id="id_imagen" name="imagen" value="{{ form.imagen.value }}">
+    </div>
+
+    <input type="submit" value="Enviar" />
+</form>
+
+</body>
+</html>
+{% endblock %}

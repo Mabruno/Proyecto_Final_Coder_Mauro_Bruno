@@ -1,0 +1,79 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block contenidoVar %}
+
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Start Content Page -->
+    <div class="container-fluid bg-light py-5">
+        <div class="col-md-6 m-auto text-center">
+            <h1 class="h1">Ingresa con tu Usuario</h1>
+            <p>
+                Inicia sesion y le enviaremos un aviso al vendedor de que estas interesado en su producto.
+                Pronto se pondran en contacto para acordar las condiciones de pago y envio.
+                Podes dejarnos un mensaje para pasarle al vendedor. Aprovecha y sacate todas las dudas que tengas!
+            </p>
+        </div>
+    </div>
+
+
+
+    <!-- Start Contact -->
+    <div class="container py-5">
+        <div class="row py-5">
+            {% if formulario_compra.errors %}
+
+            <p style='color:red;'> Datos invalidos </p>
+
+            {% endif %}
+
+            <form class="col-md-9 m-auto" method="POST" >{% csrf_token %}
+                <div class="row">
+                    <div class="form-group col-md-6 mb-3">
+                        <label for="username">Nombre</label>
+                        <input type="text" class="form-control mt-1" id="username" name="username" placeholder="Nombre">
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                        <label for="pago">Pago</label>
+                        <input type="pago" class="form-control mt-1" id="pago" name="pago" placeholder="Pago">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="envio">Envio</label>
+                    <input type="text" class="form-control mt-1" id="envio" name="envio" placeholder="Envio">
+                </div>
+                <div class="mb-3">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea class="form-control mt-1" id="mensaje" name="mensaje" placeholder="Mensaje" rows="8"></textarea>
+                </div>
+                <div class="row">
+                    <div class="col text-end mt-2">
+                        <button type="submit" class="btn btn-success btn-lg px-3">Comprar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- End Contact -->
+</body>
+
+</html>
+
+
+{% endblock %}
