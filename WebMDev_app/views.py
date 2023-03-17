@@ -62,11 +62,22 @@ def Productoscreacion(request):
     else:
         formulario = form_crearArticulo(request.POST, request.FILES)
         if formulario.is_valid():
-            NuevoArticulo = formulario.save(commit=False)
-            NuevoArticulo.user = request.user
+            informacion = formulario.cleaned_data
+            #NuevoArticulo = formulario.save(commit=False)
+            nuevoArticulo = Producto()
+            nuevoArticulo.user = request.user
+            nuevoArticulo.precio = informacion['precio']
+            nuevoArticulo.nombre = informacion['nombre']
+            nuevoArticulo.idnumber = informacion['idnumber']
+            nuevoArticulo.tamaño = informacion['tamaño']
+            nuevoArticulo.valoracion = informacion['valoracion']
+            nuevoArticulo.descripcion = informacion['descripcion']
+            nuevoArticulo.slug = informacion['slug']
+
             if request.FILES.get('imagen'):
-                NuevoArticulo.imagen = request.FILES['imagen']
-            NuevoArticulo.save()
+                nuevoArticulo.imagen = request.FILES['imagen']
+
+            nuevoArticulo.save()
             return redirect('productos')
         else:
             return render(request, 'productos_create.html', {'form': formulario})
@@ -86,19 +97,64 @@ def Productosdelete(request, slug):
 @login_required
 def modificarproducto(request, slug):
 
-    producto = get_object_or_404(Producto, slug=slug)
+    if request.method == 'GET':
+        try:
+            producto = get_object_or_404(Producto, slug=slug)
+        except Http404:
+            return HttpResponseNotFound(print(slug), '<h1>Producto inexistente</h1>')
 
-    if request.method == 'POST':
-
-        producto.nombre = request.POST.get('nombre')
-        producto.precio = request.POST.get('precio')
-        producto.descripcion = request.POST.get('descripcion')
-        producto.save()
-
-        return redirect('productos')
+        formulario = form_crearArticulo(instance=producto)
+        return render(request, 'productos_modificar.html', {'form': formulario})
 
 
-    return render(request, 'productos_modificar.html', {'producto': producto})
+    else:
+
+        formulario = form_crearArticulo(request.POST, request.FILES)
+
+        if formulario.is_valid():
+
+            informacion = formulario.cleaned_data
+            nuevoArticulo = Producto()
+            nuevoArticulo.user = request.user
+            nuevoArticulo.precio = informacion['precio']
+            nuevoArticulo.nombre = informacion['nombre']
+            nuevoArticulo.idnumber = informacion['idnumber']
+            nuevoArticulo.tamaño = informacion['tamaño']
+            nuevoArticulo.valoracion = informacion['valoracion']
+            nuevoArticulo.descripcion = informacion['descripcion']
+            nuevoArticulo.slug = informacion['slug']
+
+            if request.FILES.get('imagen'):
+                nuevoArticulo.imagen = request.FILES['imagen']
+
+            nuevoArticulo.save()
+
+            return redirect('modificar')
+
+def modificadoproducto(request):
+
+        formulario = form_crearArticulo(request.POST, request.FILES)
+        formulario.save()
+
+        """if formulario.is_valid():
+
+            informacion = formulario.cleaned_data
+            nuevoArticulo = Producto()
+            nuevoArticulo.user = request.user
+            nuevoArticulo.precio = informacion['precio']
+            nuevoArticulo.nombre = informacion['nombre']
+            nuevoArticulo.idnumber = informacion['idnumber']
+            nuevoArticulo.tamaño = informacion['tamaño']
+            nuevoArticulo.valoracion = informacion['valoracion']
+            nuevoArticulo.descripcion = informacion['descripcion']
+            nuevoArticulo.slug = informacion['slug']
+
+            if request.FILES.get('imagen'):
+                nuevoArticulo.imagen = request.FILES['imagen']
+
+            nuevoArticulo.save()
+"""
+        return redirect('inicio')
 
 
 

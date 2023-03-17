@@ -9,7 +9,7 @@ class Producto(models.Model):
     descripcion = models.CharField(blank=True, max_length=100)
     idnumber = models.IntegerField(blank=True)
     tamaño = models.CharField(blank=True, max_length=10)
-    precio = models.FloatField(blank=True, default=0.0)
+    precio = models.FloatField(default=0.0)
     valoracion = models.FloatField(blank=True, max_length=4, default=0.0)
     imagen = models.ImageField(blank=True, upload_to='media')
     slug = models.SlugField(blank=True, max_length=100, unique=True)

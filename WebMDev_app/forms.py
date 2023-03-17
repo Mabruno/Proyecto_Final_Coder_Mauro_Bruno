@@ -31,3 +31,8 @@ class form_crearArticulo(ModelForm):
         model=Producto
         fields=['nombre','descripcion','idnumber','tamaño','precio','valoracion','imagen','slug']
 
+
+class form_modificarArticulo(ModelForm):
+ class Meta:
+        model=Producto
+        fields=['nombre','descripcion','idnumber','tamaño','precio','valoracion','imagen','slug']
