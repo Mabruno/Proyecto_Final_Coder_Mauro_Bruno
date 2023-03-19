@@ -20,7 +20,7 @@ urlpatterns = [
     path('productos/admin/', views.Productosadmin.as_view(), name='admin'),
     path('productos_create/', views.Productoscreacion, name="crearArticulo"),
     path('productos/modificar/<slug:slug>', views.modificarproducto, name='modificar'),
-
+    path('productos_modificado/', views.modificadoproducto, name='modificado'),
 ]
 
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

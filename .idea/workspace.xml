@@ -1,38 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="68b1cd2f-c98c-4ebd-94dd-f817f2a22d08" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebMDev_app/migrations/0014_delete_user_delete_usercreationform_delete_usuario.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebMDev_app/migrations/0015_producto_user_alter_producto_descripcion_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebMDev_app/migrations/0016_alter_producto_imagen.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebMDev_app/migrations/0017_alter_producto_imagen.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebMDev_app/migrations/0018_alter_producto_imagen.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebMDev_app/migrations/0019_alter_producto_tamaño.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebMDev_app/templates/productos_create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/articulo_05_m5bKaK7.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/articulo_06_Dgm1yke.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/WebMDev_app/assets/img/inicio.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Web_MDev.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Web_MDev.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto-Final-Bruno-Mauro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebMDev/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebMDev_app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebMDev_app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebMDev_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebMDev_app/templates/compra.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/templates/compra.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebMDev_app/templates/inicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/templates/inicio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebMDev_app/templates/contacto.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/templates/contacto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebMDev_app/templates/nosotros.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/templates/nosotros.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebMDev_app/templates/ofertas.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/templates/ofertas.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebMDev_app/templates/productos.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/templates/productos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebMDev_app/templates/productos_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/templates/productos_admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebMDev_app/templates/productos_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebMDev_app/templates/productos_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/templates/productos_modificar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebMDev_app/templates/productos_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/templates/productos_create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebMDev_app/templates/registro.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/templates/registro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebMDev_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebMDev_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db_webmdev.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_webmdev.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db_webmdev.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +41,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/WebMDev_app/urls.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebMDev_app/views.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -62,20 +54,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mauro/OneDrive/Desktop/Web_MDev - Copy (2)/WebMDev_app/templates&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;HTML&quot;,
-      &quot;Python&quot;
-    ]
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mauro\OneDrive\Desktop\Web_MDev - Copy (2)\WebMDev_app\templates" />
@@ -88,7 +72,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Web_MDev" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -100,8 +84,8 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="runserver" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -139,6 +123,36 @@
           <url>file://$PROJECT_DIR$/main.py</url>
           <line>8</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/WebMDev_app/views.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/WebMDev_app/views.py</url>
+          <line>113</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/WebMDev_app/views.py</url>
+          <line>115</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/WebMDev_app/views.py</url>
+          <line>86</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/WebMDev_app/views.py</url>
+          <line>135</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/WebMDev_app/views.py</url>
+          <line>143</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

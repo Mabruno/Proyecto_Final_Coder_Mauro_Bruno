@@ -4,71 +4,76 @@
 {% block contenidoVar %}
 
 
-<div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="w-100 pt-1 mb-5 text-right">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="" method="get" class="modal-content modal-body border-0 p-0">
-                <div class="input-group mb-2">
-                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
-                    <button type="submit" class="input-group-text bg-success text-light">
-                        <i class="fa fa-fw fa-search text-white"></i>
-                    </button>
-                </div>
-            </form>
+<div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="w-100 pt-1 mb-5 text-right">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-    </div>
-
-    <!-- Start Content -->
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-lg-3">
-                <h1 class="h2 pb-4">Categorias</h1>
-                <ul class="list-unstyled templatemo-accordion">
-                    <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="{% url 'enobra' %}">
-                            Tipo
-                            <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
-                        </a>
-                        <ul class="collapse show list-unstyled pl-3">
-                            <li><a class="text-decoration-none" href="{% url 'enobra' %}">Electronica</a></li>
-                            <li><a class="text-decoration-none" href="{% url 'enobra' %}">Hogar</a></li>
-                        </ul>
-                    </li>
-                    <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="{% url 'ofertas' %}">
-                            Ofertas
-                            <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
-                        </a>
-
-                    </li>
-
-                </ul>
+        <form action="" method="get" class="modal-content modal-body border-0 p-0">
+            <div class="input-group mb-2">
+                <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                <button type="submit" class="input-group-text bg-success text-light">
+                    <i class="fa fa-fw fa-search text-white"></i>
+                </button>
             </div>
+        </form>
+    </div>
+</div>
 
-            <div class="col-lg-9">
-                <div class="row">
-                    <div class="col-md-6">
-                        <ul class="list-inline shop-top-menu pb-3 pt-1">
-                            <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none mr-3" href="{% url 'crearArticulo' %}">Publicar</a>
-                                <style>
+<!-- Start Content -->
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-3">
+            <h1 class="h2 pb-4">Categorias</h1>
+            <ul class="list-unstyled templatemo-accordion">
+                <li class="pb-3">
+                    <a class="collapsed d-flex justify-content-between h3 text-decoration-none"
+                       href="{% url 'enobra' %}">
+                        Tipo
+                        <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
+                    </a>
+                    <ul class="collapse show list-unstyled pl-3">
+                        <li><a class="text-decoration-none" href="{% url 'enobra' %}">Electronica</a></li>
+                        <li><a class="text-decoration-none" href="{% url 'enobra' %}">Hogar</a></li>
+                    </ul>
+                </li>
+                <li class="pb-3">
+                    <a class="collapsed d-flex justify-content-between h3 text-decoration-none"
+                       href="{% url 'ofertas' %}">
+                        Ofertas
+                        <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
+                    </a>
+
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="col-lg-9">
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="list-inline shop-top-menu pb-3 pt-1">
+                        <li class="list-inline-item">
+                            <a class="h3 text-dark text-decoration-none mr-3"
+                               href="{% url 'crearArticulo' %}">Publicar</a>
+                            <style>
                                     .list-inline-item a {
                                         margin-right: 15px;
                                     }
-                                </style>
-                                <a class="h3 text-dark text-decoration-none mr-3" href="{% url 'admin' %}">Administrar</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 pb-4">
 
-                    </div>
+                            </style>
+                            <a class="h3 text-dark text-decoration-none mr-3" href="{% url 'admin' %}">Administrar</a>
+                        </li>
+                    </ul>
                 </div>
+                <div class="col-md-6 pb-4">
 
-                {% for producto in object_list %}
-                <div class="col-lg-9">
+                </div>
+            </div>
+
+            {% for producto in object_list %}
+            <div class="col-lg-9">
 
                 <div class="row">
 
@@ -78,12 +83,15 @@
                                 {% if producto.imagen %}
                                 <img class="card-img rounded-0 img-fluid" src="{{producto.imagen.url}}">
                                 {% else %}
-                                    <p>Imagen no disponible</p>
+                                <p>Imagen no disponible</p>
                                 {% endif %}
                                 <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
-                                        <li><a class="btn btn-success text-white mt-2" href="{{ producto.get_absolute_url }}"><i class="far fa-eye"></i></a></li>
-                                        <li><a class="btn btn-success text-white mt-2" href="{% url 'compra' %}"><i class="fas fa-cart-plus"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2"
+                                               href="{{ producto.get_absolute_url }}"><i class="far fa-eye"></i></a>
+                                        </li>
+                                        <li><a class="btn btn-success text-white mt-2" href="{% url 'compra' %}"><i
+                                                class="fas fa-cart-plus"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -101,6 +109,7 @@
                                     </li>
                                 </ul>
                                 <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    {% if producto.valoracion == 5 %}
                                     <li>
                                         <i class="text-warning fa fa-star"></i>
                                         <i class="text-warning fa fa-star"></i>
@@ -108,17 +117,41 @@
                                         <i class="text-warning fa fa-star"></i>
                                         <i class="text-warning fa fa-star"></i>
                                     </li>
+                                    {% elif producto.valoracion == 4  %}
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                    </li>
+                                    {% elif producto.valoracion == 3 %}
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                    </li>
+                                    {% elif producto.valoracion == 2 %}
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                    </li>
+                                    {% elif producto.valoracion == 1 %}
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                    </li>
+                                    {% endif %}
+
                                 </ul>
                                 <p class="text-center mb-0">${{producto.precio}}</p>
                             </div>
+                        </div>
+                    </div>
                 </div>
-                    </div>
-                    </div>
             </div>
-                {% endfor %}
-        </div>
+            {% endfor %}
         </div>
     </div>
+</div>
 
 </div>
 

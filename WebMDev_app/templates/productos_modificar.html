@@ -53,41 +53,22 @@
 </head>
 <body>
 
-    <form class="col-md-9 m-auto" method="POST">
-    {{error}}
+    <form action="/productos_modificado/" class="col-md-9 m-auto" enctype="multipart/form-data" method="post" >
     {% csrf_token %}
-    {{form.as_p}}
-    <div>
-        <label for="id_nombre">Nombre:</label>
-        <input type="text" id="id_nombre" name="nombre" value="{{ form.nombre.value }}">
+    {% if form.errors %}
+    <div class="alert alert-danger">
+        <ul>
+            {% for field_errors in form.errors.values %}
+            {% for error in field_errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+            {% endfor %}
+        </ul>
     </div>
-    <div>
-        <label for="id_descripcion">Descripción:</label>
-        <input type="text" id="id_descripcion" name="descripcion" value="{{ form.descripcion.value }}">
-    </div>
-    <div>
-        <label for="id_valoracion">Valoración:</label>
-        <input type="text" id="id_valoracion" name="valoracion" value="{{ form.valoracion.value }}">
-    </div>
-    <div>
-        <label for="id_precio">Precio:</label>
-        <input type="text" id="id_precio" name="precio" value="{{ form.precio.value }}">
-    </div>
-    <div>
-        <label for="id_tamaño">Tamaño:</label>
-        <input type="text" id="id_tamaño" name="tamaño" value="{{ form.tamaño.value }}">
-    </div>
-    <div>
-        <label for="id_idnumber">Número de identificación:</label>
-        <input type="text" id="id_idnumber" name="idnumber" value="{{ form.idnumber.value }}">
-    </div>
-    <div>
-        <label for="id_imagen">Imagen:</label>
-        <input type="text" id="id_imagen" name="imagen" value="{{ form.imagen.value }}">
-    </div>
-
-    <input type="submit" value="Enviar" />
-</form>
+    {% endif %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-secondary">Modificar</button>
+    </form>
 
 </body>
 </html>
