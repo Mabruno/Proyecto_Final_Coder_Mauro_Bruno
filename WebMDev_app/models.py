@@ -12,8 +12,9 @@ class Producto(models.Model):
     precio = models.FloatField(default=0.0)
     valoracion = models.FloatField(blank=True, max_length=4, default=0.0)
     imagen = models.ImageField(blank=True, upload_to='media')
-    slug = models.SlugField(blank=True, max_length=100, unique=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default=True)
+    slug = models.SlugField(blank=True, max_length=100)
+    userName = models.CharField(blank=True, max_length=100)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE, default=True)
 
     def get_absolute_url(self):
         return reverse('productos', kwargs={'slug': self.slug})

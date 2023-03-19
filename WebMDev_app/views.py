@@ -1,5 +1,5 @@
 from WebMDev_app.models import Producto, Consulta, Compra
-from WebMDev_app.forms import Consultaform, Compraform, form_crearArticulo
+from WebMDev_app.forms import Consultaform, Compraform, form_crearArticulo, UserCreationForm_app
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -9,6 +9,7 @@ from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseNotFound,Http404, HttpResponse
 
 
@@ -38,7 +39,7 @@ class Productosdetail(DetailView):
     slug_field = "slug"
 
 
-class Productosadmin(ListView):
+class Productosadmin(LoginRequiredMixin, ListView):
 
     model = Producto
     template_name = "productos_admin.html"
@@ -63,9 +64,8 @@ def Productoscreacion(request):
         formulario = form_crearArticulo(request.POST, request.FILES)
         if formulario.is_valid():
             informacion = formulario.cleaned_data
-            #NuevoArticulo = formulario.save(commit=False)
             nuevoArticulo = Producto()
-            nuevoArticulo.user = request.user
+            nuevoArticulo.userName = request.user.username
             nuevoArticulo.precio = informacion['precio']
             nuevoArticulo.nombre = informacion['nombre']
             nuevoArticulo.idnumber = informacion['idnumber']
@@ -82,7 +82,6 @@ def Productoscreacion(request):
         else:
             return render(request, 'productos_create.html', {'form': formulario})
 
-                
 
 @login_required
 def Productosdelete(request, slug):
@@ -94,6 +93,7 @@ def Productosdelete(request, slug):
     return redirect(reverse('productos'))
 
 
+# Modificar Producto - GET request processing
 @login_required
 def modificarproducto(request, slug):
 
@@ -106,56 +106,28 @@ def modificarproducto(request, slug):
         formulario = form_crearArticulo(instance=producto)
         return render(request, 'productos_modificar.html', {'form': formulario})
 
-
-    else:
+# Modificar producto  - POST request processing
+@login_required()
+def modificadoproducto(request):
 
         formulario = form_crearArticulo(request.POST, request.FILES)
 
         if formulario.is_valid():
-
             informacion = formulario.cleaned_data
-            nuevoArticulo = Producto()
-            nuevoArticulo.user = request.user
-            nuevoArticulo.precio = informacion['precio']
-            nuevoArticulo.nombre = informacion['nombre']
-            nuevoArticulo.idnumber = informacion['idnumber']
-            nuevoArticulo.tamaño = informacion['tamaño']
-            nuevoArticulo.valoracion = informacion['valoracion']
-            nuevoArticulo.descripcion = informacion['descripcion']
-            nuevoArticulo.slug = informacion['slug']
+            articulo_existente = get_object_or_404(Producto, slug=informacion['slug'])
+            articulo_existente.precio = informacion['precio']
+            articulo_existente.nombre = informacion['nombre']
+            articulo_existente.tamaño = informacion['tamaño']
+            articulo_existente.valoracion = informacion['valoracion']
+            articulo_existente.descripcion = informacion['descripcion']
+            articulo_existente.slug = informacion['slug']
 
             if request.FILES.get('imagen'):
-                nuevoArticulo.imagen = request.FILES['imagen']
+                articulo_existente.imagen = request.FILES['imagen']
 
-            nuevoArticulo.save()
+            articulo_existente.save()
 
-            return redirect('modificar')
-
-def modificadoproducto(request):
-
-        formulario = form_crearArticulo(request.POST, request.FILES)
-        formulario.save()
-
-        """if formulario.is_valid():
-
-            informacion = formulario.cleaned_data
-            nuevoArticulo = Producto()
-            nuevoArticulo.user = request.user
-            nuevoArticulo.precio = informacion['precio']
-            nuevoArticulo.nombre = informacion['nombre']
-            nuevoArticulo.idnumber = informacion['idnumber']
-            nuevoArticulo.tamaño = informacion['tamaño']
-            nuevoArticulo.valoracion = informacion['valoracion']
-            nuevoArticulo.descripcion = informacion['descripcion']
-            nuevoArticulo.slug = informacion['slug']
-
-            if request.FILES.get('imagen'):
-                nuevoArticulo.imagen = request.FILES['imagen']
-
-            nuevoArticulo.save()
-"""
         return redirect('inicio')
-
 
 
 #--->MODULO DE USUARIOS<---
@@ -163,18 +135,22 @@ def modificadoproducto(request):
 
 def signup(request):
     if request.method == 'GET':
+        form = UserCreationForm_app()
         return render(request, 'registro.html', {
-            'form': UserCreationForm
+            'form': form
         })
 
     else:
         if request.POST['password1'] == request.POST['password2']:
             try:
-                user = User.objects.create_user(
-                    username=request.POST['username'], password=request.POST['password1'])
-                user.save()
-                login(request, user)
-                return redirect('inicio')
+                form = UserCreationForm_app(request.POST)
+                if form.is_valid():
+                    username = form.cleaned_data.get('username')
+                    email = form.cleaned_data.get('email')
+                    password = form.cleaned_data.get('password1')
+                    user = User.objects.create_user(username=username, email=email, password=password)
+                    login(request, user)
+                    return redirect('inicio')
 
             except IntegrityError:
                 return render(request, 'registro.html', {
@@ -183,7 +159,7 @@ def signup(request):
                 })
 
         return render(request, 'registro.html', {
-            'form': UserCreationForm,
+            'form': UserCreationForm_app,
             'error': 'Las contraseñas no coinciden'
         })
 

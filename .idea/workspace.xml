@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="68b1cd2f-c98c-4ebd-94dd-f817f2a22d08" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Web_MDev.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Web_MDev.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebMDev_app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebMDev_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebMDev_app/templates/compra.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/templates/compra.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebMDev_app/templates/contacto.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/templates/contacto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebMDev_app/templates/nosotros.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/templates/nosotros.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebMDev_app/templates/ofertas.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/templates/ofertas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebMDev_app/templates/productos.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/templates/productos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebMDev_app/templates/productos_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/templates/productos_admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebMDev_app/templates/productos_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/templates/productos_create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebMDev_app/templates/productos_modificar.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/templates/productos_modificar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebMDev_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebMDev_app/templates/registro.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/templates/registro.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebMDev_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebMDev_app/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db_webmdev.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db_webmdev.sqlite3" afterDir="false" />
     </list>
@@ -30,6 +41,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/WebMDev_app/urls.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebMDev_app/views.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -39,20 +54,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mauro/Documents/Proyecto_Final_Coder&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;HTML&quot;,
-      &quot;Python&quot;
-    ]
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mauro\OneDrive\Desktop\Web_MDev - Copy (2)\WebMDev_app\templates" />
@@ -119,23 +126,33 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/WebMDev_app/views.py</url>
-          <line>63</line>
+          <line>64</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/WebMDev_app/views.py</url>
           <line>113</line>
-          <option name="timeStamp" value="7" />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/WebMDev_app/views.py</url>
-          <line>99</line>
-          <option name="timeStamp" value="9" />
+          <line>115</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/WebMDev_app/views.py</url>
+          <line>86</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/WebMDev_app/views.py</url>
           <line>135</line>
-          <option name="timeStamp" value="10" />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/WebMDev_app/views.py</url>
+          <line>143</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

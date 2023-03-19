@@ -6,47 +6,47 @@
 
 <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true" xmlns="http://www.w3.org/1999/html">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="w-100 pt-1 mb-5 text-right">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="" method="get" class="modal-content modal-body border-0 p-0">
-                <div class="input-group mb-2">
-                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
-                    <button type="submit" class="input-group-text bg-success text-light">
-                        <i class="fa fa-fw fa-search text-white"></i>
-                    </button>
-                </div>
-            </form>
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="w-100 pt-1 mb-5 text-right">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <form action="" method="get" class="modal-content modal-body border-0 p-0">
+            <div class="input-group mb-2">
+                <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                <button type="submit" class="input-group-text bg-success text-light">
+                    <i class="fa fa-fw fa-search text-white"></i>
+                </button>
+            </div>
+        </form>
     </div>
+</div>
 
-    <!-- Start Content -->
-    <div class="container py-5">
-        <div class="row">
+<!-- Start Content -->
+<div class="container py-5">
+    <div class="row">
 
+
+        <div class="col-lg-9">
+            <div class="row">
+                <div class="col-md-6 pb-4">
+                    <!---<div class="d-flex">
+                        <select class="form-control">
+                            <option>A to Z</option>
+                            <option>Item</option>
+                        </select>
+                    </div>--->
+                </div>
+            </div>
+
+            {% for producto in object_list %}
 
             <div class="col-lg-9">
-                <div class="row">
-                    <div class="col-md-6 pb-4">
-                        <!---<div class="d-flex">
-                            <select class="form-control">
-                                <option>A to Z</option>
-                                <option>Item</option>
-                            </select>
-                        </div>--->
-                    </div>
-                </div>
-
-                {% for producto in object_list %}
-                <div class="col-lg-9">
-
+                {% if producto.userName == user.username %}
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-">
                                 <img class="card-img rounded- img-fluid" src="{{producto.imagen.url}}">
-
                             </div>
 
                             <div class="card-body">
@@ -72,25 +72,29 @@
                                 </ul>
                                 <p class="text-center mb-0">${{producto.precio}}</p>
 
-               <div class="row">
-                    <div class="col text-end mt-2">
+                                <div class="row">
+                                    <div class="col text-end mt-2">
 
-                        <br><br>
-                        <a type="submit" class="btn btn-success btn-lg px-3" href="{% url 'delete' slug=producto.slug %}" >Eliminar</a>
-                        <br><br>
-                        <a type="submit" class="btn btn-success btn-lg px-3" href="{% url 'modificar' slug=producto.slug %}" >Modificar</a>
-                    </div>
-                </div>
-            </form>
+                                        <br><br>
+                                        <a type="submit" class="btn btn-success btn-lg px-3"
+                                           href="{% url 'delete' slug=producto.slug %}">Eliminar</a>
+                                        <br><br>
+                                        <a type="submit" class="btn btn-success btn-lg px-3"
+                                           href="{% url 'modificar' slug=producto.slug %}">Modificar</a>
+                                    </div>
+                                </div>
+                                </form>
                             </div>
+                        </div>
+
+                    </div>
                 </div>
-                    </div>
-                    </div>
+            {% endif %}
             </div>
-                {% endfor %}
-        </div>
+            {% endfor %}
         </div>
     </div>
+</div>
 
 
 {% endblock %}

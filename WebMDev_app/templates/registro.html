@@ -54,8 +54,8 @@
     }
 </style>
 
-    <form method="post">
-    {% csrf_token %}
+    <form method="post">{% csrf_token %}
+
     <div class="form-group">
         <label for="{{ form.username.id_for_label }}">Username:</label>
         {{ form.username }}

@@ -1,6 +1,8 @@
 from django import forms
 from django.forms import ModelForm
 from .models import Producto
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 
 class Consultaform(forms.Form):
@@ -36,3 +38,10 @@ class form_modificarArticulo(ModelForm):
  class Meta:
         model=Producto
         fields=['nombre','descripcion','idnumber','tamaño','precio','valoracion','imagen','slug']
+
+class UserCreationForm_app(UserCreationForm):
+    email = forms.EmailField(required=True, label='Email')
+
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
